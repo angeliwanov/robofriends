@@ -4,7 +4,7 @@ import Searchbox from '../components/Searchbox';
 import './App.css';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from "../components/ErrorBoundary";
-
+import Header from "../components/Header";
 
 class App extends React.Component {
     constructor() {
@@ -33,7 +33,7 @@ class App extends React.Component {
         return (!robots.length)? 
         <h1>Loading...</h1> : 
         <div className="tc">
-            <h1 className="f2">RoboFriends</h1>
+            <Header/>
             <Searchbox SearchChange={this.onSearchChange}/>
             <Scroll>
                 <ErrorBoundary>
