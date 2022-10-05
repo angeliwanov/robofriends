@@ -1,9 +1,25 @@
 import React from 'react';
+import CounterButton from './CounterButton';
 
-const Header = React.memo((props) => {
-    console.log('Header')
-    return <h1 className="f2">RoboFriends</h1>;
-  
-}) 
+
+
+class Header extends React.Component {
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.value !== this.props.value;
+    }
+
+    
+    render() {
+        // console.log('header')
+        return (
+            <div>
+                <h1 className="f2">RoboFriends</h1>
+                <CounterButton color='red'/>
+            </div>
+        )
+    } 
+}
+
 
 export default Header;
